@@ -1,0 +1,28 @@
+<template name="uploadFile">
+  <h2>Upload Photo</h2>
+  {{#autoForm id="insertForm" type="insert" collection=Collections.Docs}}
+  {{> afQuickField name="name"}}
+  {{> afQuickField class="area" name="fileId" type="cfs-file" collection="files"}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {{/autoForm}}
+
+  {{> upDown}}
+
+  <div class="fileArea">
+  {{#each uploadedFiles}}
+  {{> uploadedFile}}
+  {{/each}}
+  </div>
+</template>
+
+<template name="uploadedFile">
+  <h4>{{#with this.url}}<a href="{{this}}" target="_blank">{{../name}}</a>{{else}}{{this.name}}{{/with}} </h4>
+  {{#if this.isUploaded}}
+  {{#with this.url download=true}}
+  <a href="{{this}}" class="btn btn-default btn-xs" role="button">Download</a>
+  {{/with}}
+  {{> FS.DeleteButton class="btn btn-danger btn-xs"}}
+  {{else}}
+  <p>{{> FS.UploadProgressBar semantic=true}} Uploading...</p>
+  {{/if}}
+</template>
