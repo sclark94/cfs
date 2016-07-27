@@ -22,7 +22,7 @@ Collections.Files.deny({
   download: falseFunc
 });
 
-Collections.Images.allow({
+/*Collections.Images.allow({
   insert: trueFunc,
   update: trueFunc,
   remove: trueFunc,
@@ -35,7 +35,7 @@ Collections.Images.deny({
   remove: falseFunc,
   download: falseFunc
 });
-
+*/
 Collections.Docs.allow({
   insert: trueFunc,
   update: trueFunc,
@@ -48,7 +48,7 @@ Collections.Docs.deny({
   remove: falseFunc
 });
 
-Collections.Docs2.allow({
+/*Collections.Docs2.allow({
   insert: trueFunc,
   update: trueFunc,
   remove: trueFunc
@@ -58,4 +58,4 @@ Collections.Docs2.deny({
   insert: falseFunc,
   update: falseFunc,
   remove: falseFunc
-});
+});*/

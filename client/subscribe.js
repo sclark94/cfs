@@ -1,4 +1,4 @@
-Meteor.subscribe("images");
+//Meteor.subscribe("images");
 Meteor.subscribe("files");
 Meteor.subscribe("docs");
-Meteor.subscribe("docs2");
+//Meteor.subscribe("docs2");

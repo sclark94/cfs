@@ -1,5 +1,10 @@
 .area{
-  height: 500px;
+  height: 150px;
+  width: 150px;
   text-align: center;
   font-size: large;
+}
+
+.thumbnail{
+  height: 200px;
 }

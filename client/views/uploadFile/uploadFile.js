@@ -33,25 +33,5 @@ Meteor.startup(function () {
 Template.uploadFile.helpers({
   uploadedFiles: function() {
     return Collections.Files.find();
-  },
-  curl: function () {
-    var ins = Template.instance(), filename = '';
-    if (ins) {
-      filename = ins.filename.get();
-    }
-
-    if (filename.length === 0) {
-      filename = 'example.txt';
-    }
-
-    var authObject = {
-      authToken: Accounts._storedLoginToken() || '',
-    };
-
-    // Set the authToken
-    var authString = JSON.stringify(authObject);
-    var authToken = FS.Utility.btoa(authString);
-
-    return 'curl "' + Meteor.absoluteUrl('cfs/files/' + Collections.Files.name) + '?filename=' + filename + '&token=' + authToken + '" -H "Content-Type: text/plain" -T "' + filename + '"';
   }
 });
