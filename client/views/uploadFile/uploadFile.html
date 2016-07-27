@@ -7,9 +7,11 @@
   {{/autoForm}}
 
   <div class="fileArea">
+  {{#if currentUser}}
   {{#each uploadedFiles}}
-    <img src="{{this.url}}" alt="photo" class="thumbnail" />
+    <img src="{{this.url}}" alt="Photo" class="thumbnail" />
   {{/each}}
+  {{/if}}
   </div>
 
 </template>
